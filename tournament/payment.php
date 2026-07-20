@@ -1,18 +1,7 @@
 <?php
 session_start();
 
-$servername = "localhost"; 
-$username = "root";
-$password = "";     
-$dbname = "cse370-project";    
-
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+require_once '../db.php';
 
 
 $registration_info = $_SESSION['registration_info'] ?? null;

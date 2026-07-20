@@ -1,12 +1,6 @@
 <?php
 session_start();
-$servername = "localhost"; 
-$username = "root";        
-$password = "";            
-$dbname = "cse370-project";    
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
+require_once '../db.php';
 
 // avoid warning: Trying to access array offset on value of type null
 if (isset($registration_info) && is_array($registration_info)) {

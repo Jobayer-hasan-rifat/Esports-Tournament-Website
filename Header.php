@@ -48,31 +48,31 @@ require_once 'db.php';
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="/CSE370-Project/index.php">GAMEON</a>
+            <a class="navbar-brand" href="/index.php">GAMEON</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/CSE370-Project/index.php">Home</a>
+                        <a class="nav-link" href="/index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/CSE370-Project/tournament/tournaments.php">Tournaments</a>
+                        <a class="nav-link" href="/tournament/tournaments.php">Tournaments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/CSE370-Project/news.php">News</a>
+                        <a class="nav-link" href="/news.php">News</a>
                     </li>
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="/CSE370-Project/user/profile.php"><?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
+                            <a class="nav-link" href="/user/profile.php"><?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/CSE370-Project/user/logout.php">Logout</a>
+                            <a class="nav-link" href="/user/logout.php">Logout</a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="/CSE370-Project/user/LogIn.php">Login/Signup</a>
+                            <a class="nav-link" href="/user/LogIn.php">Login/Signup</a>
                         </li>
                     <?php endif; ?>
                 </ul>

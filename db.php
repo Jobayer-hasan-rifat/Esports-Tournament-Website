@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost"; 
-$username = "root";        
-$password = "";            
-$dbname = "cse370-project";  
+$servername = getenv("DB_HOST") ?: "localhost";
+$username = getenv("DB_USER") ?: "root";
+$password = getenv("DB_PASS") !== false ? getenv("DB_PASS") : "";
+$dbname = getenv("DB_NAME") ?: "cse370-project";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {

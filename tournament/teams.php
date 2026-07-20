@@ -1,13 +1,5 @@
 <?php
-$servername = "localhost"; 
-$username = "root";        
-$password = "";            
-$dbname = "cse370-project";  
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+require_once '../db.php';
 
 $query = "SELECT * FROM teams"; 
 $result = mysqli_query($conn, $query);
