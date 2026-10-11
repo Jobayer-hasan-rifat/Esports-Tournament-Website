@@ -1,10 +1,12 @@
 <?php
-$servername = "localhost"; 
-$username = "root";        
-$password = "";            
-$dbname = "cse370-project";  
+$host     = getenv('MYSQLHOST')     ?: 'localhost';
+$user     = getenv('MYSQLUSER')     ?: 'root';
+$password = getenv('MYSQLPASSWORD') ?: '';
+$database = getenv('MYSQLDATABASE') ?: 'your_db_name';
+$port     = getenv('MYSQLPORT')     ?: 3306;
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($host, $user, $password, $database, $port);
+
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
