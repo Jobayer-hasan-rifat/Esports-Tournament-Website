@@ -1,12 +1,7 @@
 <?php
-// Force HTTPS
-if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
-    header("Location: https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-    exit();
-}
-
 session_start();
-require_once '../db.php';
+require_once 'db.php';
+?>
 
 // Check if admin is logged in
 if (!isset($_SESSION['admin_email']) || !isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
