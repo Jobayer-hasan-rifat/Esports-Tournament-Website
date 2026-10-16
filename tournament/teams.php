@@ -18,7 +18,7 @@ $result = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registered Teams</title>
-    <link rel="stylesheet" href="Teams_style.css">
+    <link rel="stylesheet" href="/assets/css/Teams_style.css">
     <style>
         body {
             font-family: Arial, sans-serif;

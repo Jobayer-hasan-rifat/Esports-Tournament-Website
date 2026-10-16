@@ -20,7 +20,7 @@ $stmt->close();
 // If user data not found, redirect to login
 if (!$user) {
     session_destroy();
-    header("Location: ../auth/login.php");
+    header("Location: LogIn.php");
     exit();
 }
 

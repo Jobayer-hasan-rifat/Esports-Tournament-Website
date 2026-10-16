@@ -39,7 +39,6 @@ unset($_SESSION['registration_success']);
     <title>Registration Confirmation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
     <style>
         .confirmation-container {
             background: rgba(7, 166, 188, 0.1);
