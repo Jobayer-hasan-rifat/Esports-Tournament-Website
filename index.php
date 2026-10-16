@@ -1,4 +1,10 @@
 <?php
+// Force HTTPS
+if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
+    header("Location: https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    exit();
+}
+
 session_start();
 require_once 'db.php';
 ?>
@@ -8,14 +14,14 @@ require_once 'db.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CracCloud</title>
-    <link rel="stylesheet" href="/CSE370-Project/assets/css/index_style.css">
-    <link rel="stylesheet" href="/CSE370-Project/assets/css/globe.css">
-    <link rel="shortcut icon" type="x-icon" href="/CSE370-Project/assets/images/CracCloud.jpg">
+    <link rel="stylesheet" href="/assets/css/index_style.css">
+    <link rel="stylesheet" href="/assets/css/globe.css">
+    <link rel="shortcut icon" type="x-icon" href="/assets/images/CracCloud.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
     <style>
         body {
-            background-image: url('/CSE370-Project/assets/images/omen.jpg');
+            background-image: url('/assets/images/omen.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -162,32 +168,32 @@ require_once 'db.php';
 </head>
 <body>
     <header>
-        <a href="/CSE370-Project/index.php" class="logo"><b>Crac <br>Cloud</b></a>
+        <a href="/index.php" class="logo"><b>Crac <br>Cloud</b></a>
         <ul class="nav">
-            <li><a href="/CSE370-Project/admin/admin_login.php">Admin</a></li>
-            <li class="active"><a href="/CSE370-Project/index.php">Home</a></li>
-            <li><a href="/CSE370-Project/Tournament/games.php">Games</a></li>
-            <li><a href="/CSE370-Project/tournament/tournaments.php">Tournaments</a></li>
-            <li><a href="/CSE370-Project/Tournament/teams.php">Teams</a></li>
-            <li><a href="/CSE370-Project/news.php">News</a></li>
+            <li><a href="/admin/admin_login.php">Admin</a></li>
+            <li class="active"><a href="/index.php">Home</a></li>
+            <li><a href="/tournament/games.php">Games</a></li>
+            <li><a href="/tournament/tournaments.php">Tournaments</a></li>
+            <li><a href="/tournament/teams.php">Teams</a></li>
+            <li><a href="/news.php">News</a></li>
             <li><a href="#about-us">About Us</a></li>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li>
                     <div class='profile'>
-                        <a href='/CSE370-Project/user/profile.php'><?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
-                        <a href='/CSE370-Project/user/logout.php'>Logout</a>
+                        <a href='/user/profile.php'><?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
+                        <a href='/user/logout.php'>Logout</a>
                     </div>
                 </li>
             <?php elseif (isset($_SESSION['admin'])): ?>
                 <li>
                     <div class='profile'>
                         <p>Welcome, Admin</p>
-                        <a href='/CSE370-Project/admin/admin.php'>Dashboard</a>
-                        <a href='/CSE370-Project/auth/logout.php'>Logout</a>
+                        <a href='/admin/admin.php'>Dashboard</a>
+                        <a href='/auth/logout.php'>Logout</a>
                     </div>
                 </li>
             <?php else: ?>
-                <li><a href="/CSE370-Project/user/LogIn.php">Log In/Sign Up</a></li>
+                <li><a href="/user/LogIn.php">Log In/Sign Up</a></li>
             <?php endif; ?>
         </ul>
         <div class="action"></div>
@@ -198,9 +204,9 @@ require_once 'db.php';
         <div class="content">
             <h2>Dive into our<br>realm of Gaming!</h2>
             <p class="tournament-text">Do you have what it takes to touch glory? Are you eager to prove yourself in the biggest of stages? Then look no further as you can put yourself to test against the top competitors right here right now! Click on the link below!</p>
-            <a href="/CSE370-Project/tournament/tournaments.php" class="cta-button">Join Now</a>
+            <a href="/tournament/tournaments.php" class="cta-button">Join Now</a>
         </div>
-        <img src="/CSE370-Project/assets/images/spacewars.jpg" alt="Space Wars">
+        <img src="/assets/images/spacewars.jpg" alt="Space Wars">
     </div>
 
     <section id="about-us">
@@ -211,7 +217,7 @@ Feel free to give any feedback or queries you have at <a href="craccloud@gmail.c
         
     <div id="team-photos">
         <figure>
-            <img src="/CSE370-Project/assets/images/mahejabin.jpg" alt="Mahejabin Yesmin">
+            <img src="/assets/images/mahejabin.jpg" alt="Mahejabin Yesmin">
             <figcaption>
                 <div class="member-name">Mahejabin Yesmin</div>
                 <div class="social-links">
@@ -221,7 +227,7 @@ Feel free to give any feedback or queries you have at <a href="craccloud@gmail.c
             </figcaption>
         </figure>
         <figure>
-            <img src="/CSE370-Project/assets/images/sawpno.jpg" alt="Samuzzal Sawpno">
+            <img src="/assets/images/sawpno.jpg" alt="Samuzzal Sawpno">
             <figcaption>
                 <div class="member-name">Samuzzal Sawpno</div>
                 <div class="social-links">
@@ -231,7 +237,7 @@ Feel free to give any feedback or queries you have at <a href="craccloud@gmail.c
             </figcaption>
         </figure>
         <figure>
-            <img src="/CSE370-Project/assets/images/jobayer.jpg" alt="MD Jobayer Hasan">
+            <img src="/assets/images/jobayer.jpg" alt="MD Jobayer Hasan">
             <figcaption>
                 <div class="member-name">MD Jobayer Hasan</div>
                 <div class="social-links">
@@ -256,8 +262,8 @@ Feel free to give any feedback or queries you have at <a href="craccloud@gmail.c
         });
     </script>
 
-    <script src="/CSE370-Project/assets/js/script.js"></script>
-    <script src="/CSE370-Project/assets/js/in_script.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/in_script.js"></script>
 
     <footer>
         <p> 2024 CracCloud. All rights reserved.</p>

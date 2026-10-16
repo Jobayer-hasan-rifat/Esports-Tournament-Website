@@ -120,7 +120,7 @@ $result = mysqli_query($conn, $query);
         </table>
     </div>
 
-    <a href="tournament.php" class="tournament-btn">View Tournaments</a>
+    <a href="tournaments.php" class="tournament-btn">View Tournaments</a>
 
     <script>
         function showTeamInfo() {

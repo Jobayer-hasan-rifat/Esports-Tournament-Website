@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../db_connect.php');
+require_once('../db.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tournament_id = $_POST['tournament_id'];

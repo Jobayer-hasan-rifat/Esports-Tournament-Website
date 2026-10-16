@@ -1,11 +1,6 @@
 <?php
 session_start();
-$servername = "localhost"; 
-$username = "root";        
-$password = "";            
-$dbname = "cse370-project";    
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+require_once('../db.php');
 
 
 // avoid warning: Trying to access array offset on value of type null
@@ -107,8 +102,8 @@ $amount = 100;
     <p><strong>Payment Status:</strong> <?php echo htmlspecialchars($payment_status); ?></p>
     
     <div class="nav-links">
-        <a href="../tournament.php">Tournaments</a>
-        <a href="../tournament/teams.php">Teams</a>
+        <a href="tournaments.php">Tournaments</a>
+        <a href="teams.php">Teams</a>
     </div>
     <div style="text-align: center; margin-top: 20px;">
         <a href="../index.php" class="back-button">Go Back to Homepage</a>

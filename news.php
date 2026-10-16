@@ -139,7 +139,7 @@
         </div>
     </a>
 
-    <a href="tournaments.php" class="news-item" style="background-image: url('assets/images/new tourney.jpg');">
+    <a href="tournament/tournaments.php" class="news-item" style="background-image: url('assets/images/new tourney.jpg');">
         <div class="news-content">
             <h2 class="news-title">Upcoming Tournaments Up For Grabs</h2>
             <p class="news-date">Published on September 18, 2024</p>

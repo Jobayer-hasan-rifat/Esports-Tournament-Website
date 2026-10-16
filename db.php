@@ -1,11 +1,10 @@
 <?php
-$host     = getenv('MYSQLHOST')     ?: 'localhost';
-$user     = getenv('MYSQLUSER')     ?: 'root';
-$password = getenv('MYSQLPASSWORD') ?: '';
-$database = getenv('MYSQLDATABASE') ?: 'your_db_name';
-$port     = getenv('MYSQLPORT')     ?: 3306;
+$servername = "sql200.infinityfree.com"; 
+$username = "if0_40167439";        
+$password = "Letkinslay10";            
+$dbname = "if0_40167439_craccloud";  
 
-$conn = mysqli_connect($host, $user, $password, $database, $port);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

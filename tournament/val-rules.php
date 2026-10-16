@@ -92,7 +92,7 @@
 </head>
 <body>
     <div class="header">
-        <a href="index.php" class="home-button"><b>Home</b></a>
+        <a href="../index.php" class="home-button"><b>Home</b></a>
     </div>
 
     <div class="container">

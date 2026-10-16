@@ -1,6 +1,6 @@
 <?php
 
-include('config.php');
+require_once('../db.php');
 
 $query = "SELECT * FROM matches WHERE status = 'ongoing'"; // Adjust as needed
 $result = mysqli_query($conn, $query);
@@ -22,7 +22,7 @@ $result = mysqli_query($conn, $query);
 </head>
 <body>
     <header>
-        <?php include('header.php'); ?>
+        <?php require_once('../Header.php'); ?>
     </header>
     
     <section id="scoreboard">

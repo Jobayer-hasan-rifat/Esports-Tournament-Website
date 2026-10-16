@@ -88,7 +88,7 @@
     </style>
 </head>
 <body>
-    <a href="index.php" class="home-button"><b>Home</b></a>
+    <a href="../index.php" class="home-button"><b>Home</b></a>
 
     <div class="container">
         <h1>EAFC 24 Tournament Rules</h1>

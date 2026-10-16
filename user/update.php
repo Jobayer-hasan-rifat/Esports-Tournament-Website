@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('config.php');
+require_once('../db.php');
 
 
 $user_id = $_SESSION['user_id'];
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $update_query = "UPDATE users SET email='$new_email', number='$new_number' WHERE id=$user_id";
     mysqli_query($conn, $update_query);
 
-    header('Location: index.php');
+    header('Location: profile.php');
     exit;
 }
 ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../db_connect.php');
+require_once('../db.php');
 
 if (!isset($_SESSION['registration_success']) || !isset($_GET['team_id'])) {
     header('Location: tournaments.php');

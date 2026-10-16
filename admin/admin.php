@@ -1,4 +1,10 @@
 <?php
+// Force HTTPS
+if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
+    header("Location: https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    exit();
+}
+
 session_start();
 require_once '../db.php';
 
@@ -272,7 +278,7 @@ $games_result = $conn->query($games_query);
     <title>Admin Dashboard - CracCloud</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/CSE370-Project/assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
 </head>
 <body>
     <div class="container">
@@ -281,7 +287,7 @@ $games_result = $conn->query($games_query);
             <h2><i class="fas fa-gamepad"></i> Admin Dashboard</h2>
             <div class="nav-buttons">
                 <div class="system-buttons">
-                    <a href="/CSE370-Project/index.php" class="btn btn-secondary"><i class="fas fa-home"></i> Home</a>
+                    <a href="/index.php" class="btn btn-secondary"><i class="fas fa-home"></i> Home</a>
                     <a href="logout.php" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
                 <div class="main-buttons">
